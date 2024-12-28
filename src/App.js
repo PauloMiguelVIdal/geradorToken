@@ -1,13 +1,11 @@
 import React from 'react';
-import Token from "./Token"
 import './App.css';
+import Token from "./components/Token.jsx"
 
 function App() {
   return (
     <div className="App fundo">
-<h1>Paulo</h1>
-<h1>token</h1>
-{/* <button onClick={iniciarGerador()}>iniciar</button> */}
+<Token></Token>
     </div>
   );
 }
