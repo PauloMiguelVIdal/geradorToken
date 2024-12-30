@@ -4,7 +4,7 @@ import Token from "./components/Token.jsx"
 
 function App() {
   return (
-    <div className="App fundo">
+    <div className="full-screen">
 <Token></Token>
     </div>
   );

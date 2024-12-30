@@ -5,6 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  }
+
+
+.full-screen {
+  width: 100vw; /* Largura da janela */
+  height: 100vh; /* Altura da janela */
+  background-color: #f0f0f0; /* Cor de fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
@@ -12,6 +22,43 @@ code {
     monospace;
 }
 
-.fundo{
-  background-color: aquamarine;
+.containerCentral {
+border-radius: 100%;
+background-color: yellow;
+width: 300px;
+height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.containerExterno{
+  border-radius: 100%;
+background-color: transparent;
+width: 315px;
+height: 315px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 3px solid salmon;
+}
+
+.testeCircle{
+width: 400px;
+height: 400px;
+border-radius: 50%;
+border: 3px solid salmon;
+border-top: 3px solid green;
+animation: ani 2s linear;
+}
+
+
+
+@keyframes ani {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
 }
