@@ -40,21 +40,35 @@ function Token() {
 
     return (
         // <div className="testeCircle">
-        <div className="containerExterno">
 
-        <div className="containerCentral">
-            <h1>
-                token: {tokenAtivo}
-                <br />
-                tempo: {contador}
-                <br></br>
-                <button onClick={tokenGenerate}>iniciar</button>
-                <br />
-                {/* <button onClick={decrement}>retirar</button> */}
-            </h1>
+        <div>
+            {/* <div className="containerExterno">
+
+                <div className="containerCentral">
+                    <h1>
+                        token: {tokenAtivo}
+                        <br />
+                        tempo: {contador}
+                        <br></br>
+                        <button onClick={tokenGenerate}>iniciar</button>
+                        <br />
+                    </h1>
+                </div>
+            </div> */}
+<div class="circular">
+  <div class="inner"></div>
+  <div class="numb">100%</div>
+  <div class="circle">
+    <div class="bar left">
+      <div class="progress"></div>
+    </div>
+    <div class="bar right">
+      <div class="progress"></div>
+    </div>
+  </div>
+</div>
+
         </div>
-        </div>
-        // </div>
     )
 }
 

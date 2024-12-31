@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   }
 
 
@@ -59,6 +60,77 @@ animation: ani 2s linear;
     transform: rotate(0deg);
   }
   100%{
+    transform: rotate(180deg);
+  }
+}
+
+.circular {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  transform: scale(2);
+}
+
+.circular .inner {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background-color: rgba(255, 255, 255, 0.534);
+  border-radius: 100%;
+  box-shadow: 0 1px 0 rgb(0, 0, 0, 0.2);
+}
+
+.circular .numb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #4158d0; /* Define a cor do texto */
+  z-index: 7;
+}
+
+.circular .bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  clip-path: inset(0 0 0 50%);
+}
+
+.circle .bar .progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  clip-path: inset(0 0 0 50%);
+  background-color: #4158d0;
+}
+
+.circle .left .progress {
+  z-index: 1;
+  animation: left 4s linear both;
+}
+
+.circle .right .progress {
+  z-index: 3;
+  transform: rotate(180deg);
+  animation: right 4s linear both;
+}
+
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes right {
+  100% {
     transform: rotate(180deg);
   }
 }
