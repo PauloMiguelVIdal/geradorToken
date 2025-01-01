@@ -54,16 +54,6 @@ animation: ani 2s linear;
 }
 
 
-
-@keyframes ani {
-  0%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(180deg);
-  }
-}
-
 .circular {
   height: 100px;
   width: 100px;
@@ -79,9 +69,9 @@ animation: ani 2s linear;
   height: 80px;
   width: 80px;
   margin: -40px 0 0 -40px;
-  background-color: rgba(255, 255, 255, 0.534);
-  border-radius: 100%;
-  box-shadow: 0 1px 0 rgb(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .circular .numb {
@@ -89,47 +79,74 @@ animation: ani 2s linear;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem; /* Ajusta o tamanho da fonte */
-  font-weight: bold; /* Deixa o texto em negrito */
-  color: #4158d0; /* Define a cor do texto */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4158d0;
   z-index: 7;
 }
 
-.circular .bar {
-  position: absolute;
+.circular .circle {
+  position: relative;
   height: 100%;
   width: 100%;
-  border-radius: 100%;
-  clip-path: inset(0 0 0 50%);
+  border-radius: 50%;
 }
 
-.circle .bar .progress {
+.circular .circle .bar {
   position: absolute;
   height: 100%;
   width: 100%;
-  border-radius: 100%;
+  border-radius: 50%;
   clip-path: inset(0 0 0 50%);
+  background-color: transparent;
+}
+
+.circular .circle .bar .progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   background-color: #4158d0;
+  border-radius: 50%;
+  clip-path: inset(0 0 0 50%);
 }
 
-.circle .left .progress {
+.circular .circle .left {
+  transform: rotate(0deg);
   z-index: 1;
-  animation: left 4s linear both;
 }
 
-.circle .right .progress {
-  z-index: 3;
+.circular .circle .left .progress {
+  animation: left-spin 60s linear infinite;
+}
+
+.circular .circle .right {
   transform: rotate(180deg);
-  animation: right 4s linear both;
+  z-index: 2;
 }
 
-@keyframes left {
+.circular .circle .right .progress {
+  animation: right-spin 60s linear infinite;
+}
+
+@keyframes left-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
   100% {
     transform: rotate(180deg);
   }
 }
 
-@keyframes right {
+@keyframes right-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
   100% {
     transform: rotate(180deg);
   }

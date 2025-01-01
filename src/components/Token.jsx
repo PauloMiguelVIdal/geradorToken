@@ -57,7 +57,8 @@ function Token() {
             </div> */}
 <div class="circular">
   <div class="inner"></div>
-  <div class="numb">100%</div>
+  <div className="numb">{tokenAtivo}</div>
+  {/* tempo: {contador} */}
   <div class="circle">
     <div class="bar left">
       <div class="progress"></div>
