@@ -4,7 +4,7 @@ function Token() {
     const [estadoToken, setEstadoToken] = useState(false)
     const [tokenAtivo, setTokenAtivo] = useState(null)
     const [contador, setCounter] = useState(60)
-
+    const [stateAnimation, setAnimation] = useState(true)
     useEffect(() => {
         let intervalo;
 
@@ -16,45 +16,28 @@ function Token() {
 
 
         if (contador === 0 || !estadoToken) {
-            //     clearInterval(intervalo);
-            // setEstadoToken(false)
             tokenGenerate()
+
         }
 
         return () => clearInterval(intervalo);
     }, [estadoToken, contador])
-
+    
 
     function tokenGenerate() {
         const novoToken = Math.floor(Math.random() * 1000000)
         setTokenAtivo(novoToken)
         setEstadoToken(true)
+        setAnimation(true)
         setCounter(60)
-    }
-
-    function decrement() {
-        if (contador > 0) setCounter(contador - 1);
+        console.log(novoToken)
+        console.log(stateAnimation)
     }
 
 
 
     return (
-        // <div className="testeCircle">
 
-        <div>
-            {/* <div className="containerExterno">
-
-                <div className="containerCentral">
-                    <h1>
-                        token: {tokenAtivo}
-                        <br />
-                        tempo: {contador}
-                        <br></br>
-                        <button onClick={tokenGenerate}>iniciar</button>
-                        <br />
-                    </h1>
-                </div>
-            </div> */}
 <div class="circular">
   <div class="inner"></div>
   <div className="numb">{tokenAtivo}</div>
@@ -68,8 +51,6 @@ function Token() {
     </div>
   </div>
 </div>
-
-        </div>
     )
 }
 
