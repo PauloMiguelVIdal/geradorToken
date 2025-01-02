@@ -91,13 +91,13 @@ code {
   animation: left-spin 60s linear infinite;
 }
 
+.circular .circle .right .progress {
+  animation: right-spin 60s linear infinite;
+}
+
 .circular .circle .right {
   transform: rotate(180deg);
   z-index: 2;
-}
-
-.circular .circle .right .progress {
-  animation: right-spin 60s linear infinite;
 }
 
 @keyframes left-spin {

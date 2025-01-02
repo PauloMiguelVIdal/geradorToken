@@ -5,6 +5,7 @@ function Token() {
     const [tokenAtivo, setTokenAtivo] = useState(null)
     const [contador, setCounter] = useState(60)
     const [stateAnimation, setAnimation] = useState(true)
+    
     useEffect(() => {
         let intervalo;
 
@@ -32,25 +33,25 @@ function Token() {
         setCounter(60)
         console.log(novoToken)
         console.log(stateAnimation)
+        
     }
 
 
 
     return (
-
-<div class="circular">
-  <div class="inner"></div>
+<div className="circular">
+  <div className="inner"></div>
   <div className="numb">{tokenAtivo}</div>
-  {/* tempo: {contador} */}
-  <div class="circle">
-    <div class="bar left">
-      <div class="progress"></div>
+  <div className="circle">
+    <div className="bar left">
+      <div className={`progress ${stateAnimation ? "AnimationLeft" : ""}`}></div>
     </div>
-    <div class="bar right">
-      <div class="progress"></div>
+    <div className="bar right">
+      <div className={`progress ${stateAnimation ? "AnimationRight" : ""}`}></div>
     </div>
   </div>
 </div>
+
     )
 }
 
